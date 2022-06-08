@@ -15,7 +15,7 @@ app.use(cors())
 app.use('/posts', postRoutes)
 
 app.get('/', (req, res) => {
-  res.send('Hello from Heroku')
+  res.send('Hello from Heroku !')
 })
 
 const user = process.env.DB_USER

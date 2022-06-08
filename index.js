@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors())
 app.use('/posts', postRoutes)
 
+app.get('/', (req, res) => {
+  res.send('Hello from Heroku')
+})
+
 const user = process.env.DB_USER
 const pwd = process.env.DB_PASSWORD
 const CONNECTION_URL = `mongodb://${user}:${pwd}@cluster0-shard-00-00.8nkmc.mongodb.net:27017,cluster0-shard-00-01.8nkmc.mongodb.net:27017,cluster0-shard-00-02.8nkmc.mongodb.net:27017/lexy_test?ssl=true&replicaSet=atlas-11s9wq-shard-0&authSource=admin&retryWrites=true&w=majority`
